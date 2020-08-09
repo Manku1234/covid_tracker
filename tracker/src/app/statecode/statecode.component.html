@@ -1,0 +1,51 @@
+Districts comes under {{ statecode.id }}
+
+<table align="center" border="1" cellpadding="4" cellspacing="4">
+  <tr>
+    <th>ID</th>
+    <th>District name</th>
+    <th>Confirmed</th>
+    <th>Recovered</th>
+    <th>Decreased</th>
+    <th>Tested</th>
+  
+  </tr>
+
+  <tr *ngFor="let corona of coronaList | keyvalue; let index = index">
+    <td>{{ index + 1 }}</td>
+    <td>{{ corona.key }}</td>
+
+    <td>
+      {{ corona.value.total?.confirmed }}
+    </td>
+    <td>{{ corona.value.total?.recovered }}</td>
+    <td>{{ corona.value.total?.deceased }}</td>
+    <td>{{ corona.value.total?.tested }}</td>
+ 
+  </tr>
+</table>
+
+<!-- <div *ngFor="let data of demodata.AN.total"></div>
+<p>{{ data.confirmed }}</p> -->
+<!-- <div *ngFor="let corona of coronaList | keyvalue">
+  <p>
+    Total Confirmed Cases:<span class="ml-2">{{
+      corona.value.total?.confirmed
+    }}</span>
+  </p>
+  <p>
+    Total Recovered Cases:<span class="ml-3">{{
+      corona.value.total?.recovered
+    }}</span>
+  </p>
+  <p>
+    Total Deceased Cases:<span class="ml-3">{{
+      corona.value.total?.deceased
+    }}</span>
+  </p>
+  <p>
+    Total Tested Cases:<span class="ml-3">{{
+      corona.value.total?.tested
+    }}</span>
+  </p>
+</div> -->
